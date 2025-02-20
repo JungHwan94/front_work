@@ -1,0 +1,83 @@
+/* PC 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* 헤더 스타일 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    columns: white;
+}
+
+#logo {
+    width: 150px;
+}
+
+#login {
+    display: flex;
+    align-items: right;
+    gap: 10px;
+    margin-right: auto;
+}
+
+/* 내비게이션 스타일 */
+.navi {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #444;
+}
+.navi a {
+    color: white;
+    text-decoration: none;
+}
+
+/* 섹션 스타일 */
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+article {
+    margin-bottom: 20px;
+}
+article h4 {
+    color: #333;
+}
+/* 사이드 이미지 영역 */
+aside {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+aside img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 푸터 스타일 */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    background-color: #333;
+    color: white;
+}

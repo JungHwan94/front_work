@@ -1,6 +1,22 @@
 table {
     border: 1px solid;
+    border-collapse: separate;
+    font-weight: bold;
+    font-size: 15px;
 }
 thead, tfoot {
-    background-color: aquamarine;
+    background-color: peachpuff;
+}
+tbody {
+    background-color: rosybrown;
+}
+th, td {
+    border: 1px solid;
+    border-color:gainsboro;
+    width: 150px;
+    width: 200px;
+    padding: 5px;
+    text-align: center;
+    vertical-align: top;
+    word-break: break-all;
 }

@@ -1,0 +1,23 @@
+@media screen and (min-width: 601px) and (max-width: 999px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    #login {
+        margin-right: 0;
+        justify-content: center;
+    }
+    .navi {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+    }
+    section {
+        width: 90%;
+        padding: 15px;
+    }
+    aside img {
+        width: 200px;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제</title>
+</head>
+<body>
+    <h4>객체 생성</h4>
+    <button onclick="student();">클릭</button>
+    <div id="hwan1" class="hwan"></div>
+    <script>
+        function student() {
+            const user = {
+               'age!!': 25,
+               'name': '정환',
+               'adress': '별내'
+            };
+            const hwan1 = document.getElementById('hwan1');
+            hwan1.innerHTML += `age: ${user['age!!']}<br>`;
+            hwan1.innerHTML += `name: ${user.name}<br>`;
+            hwan1.innerHTML += `adress: ${user.adress}<br>`;
+        }
+    </script>
+    <hr>
+
+    <h4>다음을 화살표 함수로 바꾸시오</h4>
+    <button id="test1">클릭</button>
+    <div id="hwan2" class="hwan"></div>
+    <script>
+        const hwan2 = document.getElementById('hwan2');
+
+        let tjoeun1 = function(name) {
+            return name * 2;  // name1 → name 변경
+        };
+
+        document.getElementById('test1').addEventListener('click', function() {
+            const result = tjoeun1(10);
+            hwan2.innerHTML = `결과: ${result}`;
+        });
+    </script>
+    <hr>
+
+    <button id="test2">클릭</button>
+    <div id="hwan3" class="hwan"></div>
+    <script>
+        const test2 = document.getElementById('test2');
+        const hwan3 = document.getElementById('hwan3');
+
+        const tjoeun2 = (name, age) => {
+            let year;
+            if (age <= 50) {
+                year = age + 2000;
+            } else {
+                year = age + 1900;
+            }
+            return `${name}님의 생년은 ${year}년 입니다`;
+        };
+
+        document.getElementById('test2').addEventListener('click', function() {
+            hwan3.innerHTML = tjoeun2("홍길동", 30);
+        });
+    </script>
+    <hr>
+
+    <button id="test3">클릭</button>
+    <div id="hwan4" class="hwan"></div>
+    <script>
+        const hwan4 = document.getElementById('hwan4');
+
+        function test3() {
+            const arr = [2, 4, 6, 8];
+            const arr2 = arr.map(function(num) {
+                return num * 5;
+            });
+            hwan4.innerHTML = `변환된 배열: [${arr2.join(', ')}]`;
+        }
+
+        document.getElementById('test3').addEventListener('click', test3);
+    </script>
+</body>
+</html>

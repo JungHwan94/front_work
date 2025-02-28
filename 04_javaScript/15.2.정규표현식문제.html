@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        }
+        fieldset {
+            width: 520px;
+            padding: 20px;
+            border: 2px solid #000;
+            background: #fff;
+        }
+        label, input {
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100px;
+        }
+        .center {
+            text-align: center;
+        }
+        select {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <h1>회원가입</h1><br>
+    <fieldset>
+        * 아이디: <input type="text" id="userid">
+        첫글자는 반드시 영문자하고 영문자, 숫자 포함 총 4~12자로 입력하시오.<br><br>
+        * 비밀번호: <input type="password" id="userpw">
+        영문자, 숫자, 특수문자로 총 8~15자로 입력하시오.<br><br>
+        * 비밀번호 확인: <input type="password" id="userpwcheck"><br>
+        위의 비밀번호와 일치하게 입력하시오.<br><br>
+        * 이름: <input type="text" id="username">
+        한글로만 이루어져 있어야 되며 2글자 이상으로 입력하시오.<br><br>
+        * 이메일: <input type="text" id="useremail">
+        이메일 형식에 맞춰 입력하시오.<br><br>
+        * 취미: <input type="text"><br>
+        * 거주지:
+        <select>
+            <option>서울</option>
+            <option>경기도</option>
+            <option>인천</option>
+            <option>제주도</option>
+            <option>강원도</option>
+            <option>충청도</option>
+            <option>전라도</option>
+            <option>경상도</option>
+        </select>
+        <hr>
+        <div class="center">
+            <button onclick="return validate();">회원가입</button>
+            <button type="reset">취소</button>
+        </div>
+
+        
+        <script>
+            function validate() {
+                const userid = document.getElementById('userid').value;
+                const userpw = document.getElementById('userpw').value;
+                const userpwcheck = document.getElementById('userpwcheck').value;
+                const username = document.getElementById('username').value;
+                const useremail = document.getElementById('useremail').value;
+    
+                const testid = /^[a-zA-Z][a-zA-Z0-9]{3,11}$/;
+                const testpw = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~!@#$%^&*])[A-Za-z\d~!@#$%^&*]{8,15}$/;
+                const testname = /^[가-힣]{2,}$/;
+                const testemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+                if (!testid.test(userid)) {
+                    alert('아이디는 첫 글자가 영문이어야 하며 4~12자의 영문자 또는 숫자로 구성해야 합니다.');
+                    return false;
+                }
+                if (!testpw.test(userpw)) {
+                    alert('비밀번호는 영문, 숫자, 특수문자를 포함한 8~15자리여야 합니다.');
+                    return false;
+                }
+                if (userpw !== userpwcheck) {
+                    alert('비밀번호 확인이 일치하지 않습니다.');
+                    return false;
+                }
+                if (!testname.test(username)) {
+                    alert('이름은 한글로만 이루어져 있어야 하며, 최소 2글자 이상 입력해야 합니다.');
+                    return false;
+                }
+                if (!testemail.test(useremail)) {
+                    alert('올바른 이메일 형식을 입력하세요.');
+                    return false;
+                }
+                alert('회원가입이 완료되었습니다!');
+                return true;
+            }
+        </script>
+
+    </fieldset>
+    <br><br><br><br><br><br><br>
+</body>
+</html>

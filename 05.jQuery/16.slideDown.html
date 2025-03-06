@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>ani slideDown slideUpo</title>
+    <style>
+        div{
+            background-color: pink;
+            border: 1px solid red;
+            border-radius: 10px;
+            width: 300px;
+            height: 40px;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        p {
+            width: 280px;
+            height: 80px;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>* slideDown(), slideUp()</h3>
+    <span>선택된 요소가 아래로 펼쳐지면서 보여지고, 위로 말아 올라가면서 사라짐</span>
+    <br><br>
+
+    <div>Q. 질문</div>
+    <p>A. 답변</p>
+
+    <div>Q. 누구세용?</div>
+    <p>A. 사랑해요</p>
+
+    <div>Q. 집게리아죠?</div>
+    <p>A. 뚱인데요</p>
+
+    <div>Q. 거기 집게리아죠?</div>
+    <p>A. 아뇨 뚱이라니까요</p>
+
+    <div>Q. 거기 집게리아 입니까?</div>
+    <p>A. 나는 뚱이라니까~</p>
+
+    <script>
+        $(() => {
+            $('div').click(function() {
+                console.log($(this).next());
+                const $p = $(this).next();
+                if($p.css('display') == 'none') {
+                    $p.slideDown();
+                } else {
+                    $p.slideUp();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
